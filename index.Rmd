@@ -1,6 +1,5 @@
 ---
-title: "Tidyverse Sample Exam v2.0"
-subtitle: Solutions
+title: "Tidyverse Sample Exam v2.0 <br>Solutions"
 output: 
   html_document:
     toc: TRUE
@@ -10,10 +9,29 @@ output:
 author: "[Brendan Cullen](https://bcullen.rbind.io/)"
 ---
 
+<br>
+<center>
+```{r out.width="70%", fig.pos="c", echo=FALSE}
+knitr::include_graphics("img/tidyverse_key.png")
+```
+</center>
+<br>
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 library(tidyverse)
 ```
+
+
+### Instructions
+
+1. This exam covers material from [R for Data Science](https://r4ds.had.co.nz/). You may find the [study guide](https://jrnold.github.io/r4ds-exercise-solutions/) useful. If you have any questions about scope, please get in touch.
+
+2. You must complete the exam within 90 minutes.
+
+3. You may use any books or digital resources you want during this examination, but you may not communicate with any person other than your examiner.
+
+4. You are required to use the RStudio IDE for the practical portions of this exam. You may use either the desktop edition or rstudio.cloud as you prefer.
 
 ### Basic Operations
 

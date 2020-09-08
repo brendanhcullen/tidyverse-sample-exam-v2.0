@@ -23,14 +23,14 @@ library(tidyverse)
 (person <- read_csv(here::here("person.csv")))
 ```
 
-1.  Create a tibble containing only family and personal names, in that order. You do not need to assign this tibble or any others to variables unless explicitly asked to do so. However, as noted in the introduction, you *must* use the pipe operator `%>%` and code that follows the tidyverse style guide.
+2.  Create a tibble containing only family and personal names, in that order. You do not need to assign this tibble or any others to variables unless explicitly asked to do so. However, as noted in the introduction, you *must* use the pipe operator `%>%` and code that follows the tidyverse style guide.
 
 ```{r}
 person %>% 
   select(family_name, personal_name)
 ```
 
-1.  Create a new tibble containing only the rows in which family names come *before* the letter `M`. Your solution should work for tables with more rows than the example, i.e., you cannot rely on row numbers or select specific names.
+3.  Create a new tibble containing only the rows in which family names come *before* the letter `M`. Your solution should work for tables with more rows than the example, i.e., you cannot rely on row numbers or select specific names.
 
 ```{r}
 before_m <- letters[which(letters == "a"):which(letters == "m") - 1]
@@ -42,7 +42,7 @@ person %>%
   select(-family_first_letter)
 ```
 
-1.  Display all the rows in `person` sorted by family name length with the longest name first.
+4.  Display all the rows in `person` sorted by family name length with the longest name first.
 
 ```{r}
 person %>% 
@@ -58,14 +58,14 @@ person %>%
 (measurements <- read_csv(here::here("measurements.csv")))
 ```
 
-1.  Create a tibble containing only rows where *none* of the values are `NA` and save in a tibble called `cleaned`.
+2.  Create a tibble containing only rows where *none* of the values are `NA` and save in a tibble called `cleaned`.
 
 ```{r}
 (cleaned <- measurements %>% 
   drop_na())
 ```
 
-1.  Count the number of measurements of each type of quantity in `cleaned`. Your result should have one row for each quantity `"rad"`, `"sal"`, and `"temp"`.
+3.  Count the number of measurements of each type of quantity in `cleaned`. Your result should have one row for each quantity `"rad"`, `"sal"`, and `"temp"`.
 
 ```{r}
 cleaned %>% 
@@ -73,7 +73,7 @@ cleaned %>%
 ```
 
 
-1.  Display the minimum and maximum value of `reading` separately for each quantity in `cleaned`. Your result should have one row for each quantity `"rad"`, `"sal"`, and `"temp"`.
+4.  Display the minimum and maximum value of `reading` separately for each quantity in `cleaned`. Your result should have one row for each quantity `"rad"`, `"sal"`, and `"temp"`.
 
 ```{r}
 cleaned %>% 
@@ -82,7 +82,7 @@ cleaned %>%
             max_reading = max(reading))
 ```
 
-You could also use `dplyr::across()` and a named list of functions!
+**Note: You could also use `dplyr::across()` and a named list of functions!** `r emo::ji("sunglasses")`
 
 ```{r}
 cleaned %>% 
@@ -91,7 +91,7 @@ cleaned %>%
 ```
 
 
-1.  Create a tibble in which all salinity (`"sal"`) readings greater than 1 are divided by 100. (This is needed because some people wrote percentages as numbers from 0.0 to 1.0, but others wrote them as 0.0 to 100.0.)
+5.  Create a tibble in which all salinity (`"sal"`) readings greater than 1 are divided by 100. (This is needed because some people wrote percentages as numbers from 0.0 to 1.0, but others wrote them as 0.0 to 100.0.)
 
 ```{r}
 cleaned %>% 
@@ -110,14 +110,14 @@ cleaned %>%
   drop_na())
 ```
 
-1.  Use an inner join to combine `visited` with `cleaned` using the `visit_id` column for matches.
+2.  Use an inner join to combine `visited` with `cleaned` using the `visit_id` column for matches.
 
 ```{r}
 (combined <- inner_join(visited, cleaned, by = "visit_id"))
 ```
 
 
-1.  Find the highest radiation (`"rad"`) reading at each site. (Sites are identified by values in the `site_id` column.)
+3.  Find the highest radiation (`"rad"`) reading at each site. (Sites are identified by values in the `site_id` column.)
 
 ```{r}
 (max_rad <- combined %>% 
@@ -126,7 +126,7 @@ cleaned %>%
   summarize(max_rad = max(rad, na.rm = TRUE)))
 ```
 
-1.  Find the date of the highest radiation reading at each site.
+4.  Find the date of the highest radiation reading at each site.
 
 ```{r}
 combined %>% 
@@ -153,7 +153,7 @@ The file `home-range-database.csv` is currently saved in the root directory of t
 ```
 
 
-1.  Convert the `class` column (which is text) to create a factor column `class_fct` and assign the result to a tibble `hra`. Use `forcats` to order the factor levels as:
+2.  Convert the `class` column (which is text) to create a factor column `class_fct` and assign the result to a tibble `hra`. Use `forcats` to order the factor levels as:
     1.  mammalia
     2.  reptilia
     3.  aves
@@ -167,7 +167,7 @@ The file `home-range-database.csv` is currently saved in the root directory of t
                                               "actinopterygii"))))
 ```
 
-1.  Create a scatterplot showing the relationship between `log10.mass` and `log10.hra` in `hra`.
+3.  Create a scatterplot showing the relationship between `log10.mass` and `log10.hra` in `hra`.
 
 ```{r}
 hra %>% 
@@ -176,7 +176,7 @@ hra %>%
 ```
 
 
-1.  Colorize the points in the scatterplot by `class_fct`.
+4.  Colorize the points in the scatterplot by `class_fct`.
 
 ```{r}
 hra %>% 
@@ -184,7 +184,7 @@ hra %>%
   geom_point()
 ```
 
-1.  Display a scatterplot showing only data for birds (class `aves`) and fit a linear regression to that data using the `lm` function.
+5.  Display a scatterplot showing only data for birds (class `aves`) and fit a linear regression to that data using the `lm` function.
 
 ```{r}
 hra %>% 
@@ -214,7 +214,7 @@ summarize_table <- function(title, df) {
 summarize_table("our table", person)
 ```
 
-1.  Write another function called `show_columns` that takes a string and a tibble as input and returns a string that says something like, "*table* has columns *name*, *name*, *name*". For example, `show_columns('person', person)` should return the string `"person has columns person_id, personal_name, family_name"`.
+2.  Write another function called `show_columns` that takes a string and a tibble as input and returns a string that says something like, "*table* has columns *name*, *name*, *name*". For example, `show_columns('person', person)` should return the string `"person has columns person_id, personal_name, family_name"`.
 
 
 ```{r}
@@ -229,7 +229,7 @@ show_columns('person', person)
 ```
 
 
-1.  The function `rows_from_file` returns the first *N* rows from a table in a CSV file given the file's name and the number of rows desired. Modify it so that if no value is specified for the number of rows, a default of 3 is used.
+3.  The function `rows_from_file` returns the first *N* rows from a table in a CSV file given the file's name and the number of rows desired. Modify it so that if no value is specified for the number of rows, a default of 3 is used.
     
 ```{r eval=FALSE, class.source = "fold-show"}
 rows_from_file <- function(filename, num_rows) {
@@ -249,7 +249,7 @@ rows_from_file("measurements.csv") # should show 3 rows
 ```
 
 
-1.  The function `long_name` checks whether a string is longer than 4 characters. Use this function and a function from `purrr` to create a logical vector that contains the value `TRUE` where family names in the tibble `person` are longer than 4 characters, and `FALSE` where they are 4 characters or less.
+4.  The function `long_name` checks whether a string is longer than 4 characters. Use this function and a function from `purrr` to create a logical vector that contains the value `TRUE` where family names in the tibble `person` are longer than 4 characters, and `FALSE` where they are 4 characters or less.
     
 ```{r class.source = "fold-show"}
 long_name <- function(name) {
@@ -276,7 +276,7 @@ person %>%
     ---
 ```
 
-Corrected YAML header:
+**Corrected YAML header:**
 
 ```
 ---
@@ -288,4 +288,4 @@ output:
 ---
 ```
 
-Note that you need to add an indentation after `html_document:` and add `toc: TRUE`
+**Note: You need to add an indentation after `html_document:` and add `toc: TRUE`**

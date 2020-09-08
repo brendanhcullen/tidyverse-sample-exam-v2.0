@@ -7,6 +7,7 @@ output:
     code_folding: hide
     theme: flatly
     css: "css/custom.css"
+    code_download: true
 author: "[Brendan Cullen](https://bcullen.rbind.io/)"
 ---
 
@@ -38,6 +39,12 @@ library(tidyverse)
 
 :::alert
 There is of course no one correct way to solve each of these questions. I've included the first solutions that first came to my mind when I did this practice exam. If you find a mistake or a much better solution, feel free to submit a pull request on [Github](https://github.com/brendanhcullen/tidyverse-sample-exam-v2.0).
+:::
+
+
+:::download
+<br>
+You can download the blank sample exam `.rmd` [here](sample_exam_v2.0.Rmd). You can download this current `.rmd` containing the solutions [here](index.Rmd).
 :::
 
 <br>

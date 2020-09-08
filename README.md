@@ -1,6 +1,6 @@
 # tidyverse-sample-exam-v2.0
 
-![](img/tidyverse_key.png)
+<img src="/img/tidyverse_key.png" width=350>
 
 My (unofficial) solutions to the Tidyverse Sample Exam v2.0 for the [RStudio Instructor Training and Certification Program](https://education.rstudio.com/trainers/)
 

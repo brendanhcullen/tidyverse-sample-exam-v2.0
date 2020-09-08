@@ -9,6 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
+<meta name="author" content="Brendan Cullen" />
 
 
 <title>Tidyverse Sample Exam v2.0</title>
@@ -362,12 +363,12 @@ summary {
 
 
 <h1 class="title toc-ignore">Tidyverse Sample Exam v2.0</h1>
+<h3 class="subtitle">Solutions</h3>
+<h4 class="author"><a href="https://bcullen.rbind.io/">Brendan Cullen</a></h4>
 
 </div>
 
 
-<div id="tidyverse-exam" class="section level2">
-<h2>Tidyverse Exam</h2>
 <div id="basic-operations" class="section level3">
 <h3>Basic Operations</h3>
 <ol style="list-style-type: decimal">
@@ -678,11 +679,7 @@ rows_from_file(&quot;measurements.csv&quot;) # should show 3 rows</code></pre>
 <pre class="r"><code>long_name &lt;- function(name) {
       stringr::str_length(name) &gt; 4
     }</code></pre>
-<pre class="r"><code>long_name &lt;- function(name) {
-  stringr::str_length(name) &gt; 4
-}
-
-person %&gt;% 
+<pre class="r"><code>person %&gt;% 
   mutate(long_family_name = map_lgl(family_name, long_name))</code></pre>
 <pre><code>## # A tibble: 5 x 4
 ##   person_id personal_name family_name long_family_name
@@ -713,7 +710,6 @@ output:
     toc: TRUE
 ---</code></pre>
 <p>Note that you need to add an indentation after <code>output:</code> and add <code>toc: TRUE</code></p>
-</div>
 </div>
 
 

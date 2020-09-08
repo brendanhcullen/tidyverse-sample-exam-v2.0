@@ -1,14 +1,14 @@
 ---
 title: "Tidyverse Sample Exam v2.0"
+subtitle: Solutions
 output: html_document
+author: "[Brendan Cullen](https://bcullen.rbind.io/)"
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 ```
-
-## Tidyverse Exam
 
 ### Basic Operations
 
@@ -246,7 +246,7 @@ rows_from_file("measurements.csv") # should show 3 rows
 
 1.  The function `long_name` checks whether a string is longer than 4 characters. Use this function and a function from `purrr` to create a logical vector that contains the value `TRUE` where family names in the tibble `person` are longer than 4 characters, and `FALSE` where they are 4 characters or less.
     
-```{r eval=FALSE}
+```{r}
 long_name <- function(name) {
       stringr::str_length(name) > 4
     }
@@ -254,10 +254,6 @@ long_name <- function(name) {
 
 
 ```{r}
-long_name <- function(name) {
-  stringr::str_length(name) > 4
-}
-
 person %>% 
   mutate(long_family_name = map_lgl(family_name, long_name))
 ```

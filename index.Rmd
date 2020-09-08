@@ -1,19 +1,53 @@
 ---
-title: "Tidyverse Sample Exam v2.0"
-subtitle: Solutions
+title: "Tidyverse Sample Exam v2.0 <br>Solutions"
 output: 
   html_document:
     toc: TRUE
     toc_float: TRUE
     code_folding: hide
     theme: flatly
+    css: "css/custom.css"
+    code_download: true
 author: "[Brendan Cullen](https://bcullen.rbind.io/)"
 ---
+
+<br>
+<center>
+```{r out.width="70%", fig.pos="c", echo=FALSE}
+knitr::include_graphics("img/tidyverse_key.png")
+```
+</center>
+<br>
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 library(tidyverse)
 ```
+
+
+### Instructions
+
+1. This exam covers material from [R for Data Science](https://r4ds.had.co.nz/). You may find the [study guide](https://jrnold.github.io/r4ds-exercise-solutions/) useful. If you have any questions about scope, please get in touch.
+
+2. You must complete the exam within 90 minutes.
+
+3. You may use any books or digital resources you want during this examination, but you may not communicate with any person other than your examiner.
+
+4. You are required to use the RStudio IDE for the practical portions of this exam. You may use either the desktop edition or rstudio.cloud as you prefer.
+
+<br>
+
+:::alert
+There is of course no one correct way to solve each of these questions. I've included the first solutions that first came to my mind when I did this practice exam. If you find a mistake or a much better solution, feel free to submit a pull request on [Github](https://github.com/brendanhcullen/tidyverse-sample-exam-v2.0).
+:::
+
+
+:::download
+<br>
+You can download the blank sample exam `.rmd` [here](sample_exam_v2.0.Rmd). You can download this current `.rmd` containing the solutions [here](index.Rmd).
+:::
+
+<br>
 
 ### Basic Operations
 
@@ -289,3 +323,11 @@ output:
 ```
 
 **Note: You need to add an indentation after `html_document:` and add `toc: TRUE`**
+
+<br>
+
+:::book
+You can read about the RStudio Instructor Training and Certification Program [here](https://education.rstudio.com/trainers/). There is [another sample exam](https://education.rstudio.com/blog/2020/02/instructor-certification-exams/#tidyverse-certification-exam) available with [solutions](https://marlycormar.github.io/tidyverse_sample_exam/sample_exam_sols/sols.html), courtesy of [Marly Gotti](https://www.marlygotti.com/). I also reflected on my experience and shared some of my preparation materials [here](https://bcullen.rbind.io/post/2020-09-03-reflections-on-rstudio-instructor-training/). Feel free to [reach out](https://twitter.com/_bcullen) with any questions!
+:::
+
+<br>

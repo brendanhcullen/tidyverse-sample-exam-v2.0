@@ -1846,8 +1846,8 @@ person %&gt;%
 <ol style="list-style-type: decimal">
 <li>The code below is supposed to read the file <code>home-range-database.csv</code> to create a tibble called <code>hra_raw</code>, but contains a bug. Describe and fix the problem. (There are several ways to fix it: please use whichever you prefer.)</li>
 </ol>
-<pre class="r"><code>hra_raw &lt;- read_csv(here::here(&quot;data&quot;, &quot;home-range-database.csv&quot;))</code></pre>
-<p>The file <code>home-range-database.csv</code> is currently saved in the root directory of the project, not in a subdirectory called <code>data</code>, as the code above would suggest. You could either create the <code>data</code> folder and move the data file there, or you could update the code that imports the data (as I demonstrate below):</p>
+<pre class="r fold-show"><code>hra_raw &lt;- read_csv(here::here(&quot;data&quot;, &quot;home-range-database.csv&quot;))</code></pre>
+<p><strong>Note: The file <code>home-range-database.csv</code> is currently saved in the root directory of the project, not in a subdirectory called <code>data</code>, as the code above would suggest. You could either create the <code>data</code> folder and move the data file there, or you could update the code that imports the data (as I demonstrate below).</strong></p>
 <pre class="r"><code>(hra_raw &lt;- read_csv(here::here(&quot;home-range-database.csv&quot;)))</code></pre>
 <pre><code>## # A tibble: 566 x 24
 ##    taxon common.name class order family genus species primarymethod N    

@@ -199,7 +199,8 @@ hra_raw <- read_csv(here::here("data", "home-range-database.csv"))
   mutate(class_fct = factor(class, levels = c("mammalia", 
                                               "reptilia", 
                                               "aves", 
-                                              "actinopterygii"))))
+                                              "actinopterygii"))) %>% 
+   relocate(class_fct, .after = class))
 ```
 
 3.  Create a scatterplot showing the relationship between `log10.mass` and `log10.hra` in `hra`.
@@ -303,12 +304,12 @@ person %>%
 1.  Modify the YAML header of this file so that a table of contents is automatically created each time this document is knit, and fix any errors that are preventing the document from knitting cleanly.
 
 ```
-    ---
-    title: "Tidyverse Exam Version 2.0"
-    output:
-    html_document:
-        theme: flatly
-    ---
+---
+title: "Tidyverse Exam Version 2.0"
+output:
+html_document:
+    theme: flatly
+---
 ```
 
 **Corrected YAML header:**

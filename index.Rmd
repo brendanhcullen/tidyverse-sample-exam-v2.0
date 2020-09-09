@@ -22,7 +22,20 @@ knitr::include_graphics("img/tidyverse_key.png")
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, rows.print = 10)
-library(tidyverse)
+
+library(metathis)
+meta() %>% 
+  meta_description("A solution guide to a sample tidyverse exam for the RStudio Instructor Training and Certification Program") %>% 
+  meta_name("github-repo" = "brendanhcullen/tidyverse-sample-exam-v2.0") %>% 
+  meta_viewport() %>% 
+  meta_social(
+    title = "Tidyverse Sample Exam v2.0 Solutions",
+    url = "https://tidyverse-exam-v2-solutions.netlify.app/",
+    image = "/img/tidyverse_key.png",
+    og_author = "Brendan Cullen",
+    twitter_card_type = "summary",
+    twitter_creator = "@_bcullen"
+  )
 ```
 
 
@@ -53,6 +66,11 @@ By default, the code for each solution is hidden. You can toggle the code on and
 :::
 
 <br>
+
+```{r message=FALSE, class.source = "fold-show"}
+library(tidyverse)
+```
+
 
 ### Basic Operations
 

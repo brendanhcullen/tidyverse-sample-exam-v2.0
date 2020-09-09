@@ -49,7 +49,7 @@ You can download the blank sample exam `.rmd` [here](sample_exam_v2.0.Rmd). You 
 :::
 
 :::toggle
-By default, the code for each question is hidden. You can toggle the code on and off by clicking `Code`/`Hide` at the top right of each chunk or `Code > Show All Code` at the top right of this document.
+By default, the code for each solution is hidden. You can toggle the code on and off by clicking `Code`/`Hide` at the top right of each chunk or `Code > Show All Code` at the top right of this document.
 :::
 
 <br>
@@ -85,8 +85,7 @@ person %>%
 
 ```{r}
 person %>% 
-  mutate(family_name_length = str_length(family_name)) %>% 
-  arrange(desc(family_name_length))
+  arrange(desc(str_length(family_name)))
 ```
 
 ### Cleaning and Counting
@@ -117,8 +116,8 @@ cleaned %>%
 ```{r}
 cleaned %>% 
   group_by(quantity) %>% 
-  summarize(min_reading = min(reading),
-            max_reading = max(reading))
+  summarize(reading_min = min(reading),
+            reading_max = max(reading))
 ```
 
 **Note: You could also use `dplyr::across()` and a named list of functions!** `r emo::ji("sunglasses")`
@@ -212,7 +211,8 @@ hra_raw <- read_csv(here::here("data", "home-range-database.csv"))
 ```{r}
 hra %>% 
   ggplot(aes(log10.mass, log10.hra)) + 
-  geom_point()
+  geom_point(size = 2, alpha = 0.7) + 
+  theme_minimal()
 ```
 
 
@@ -221,7 +221,9 @@ hra %>%
 ```{r}
 hra %>% 
   ggplot(aes(log10.mass, log10.hra, color = class_fct)) + 
-  geom_point()
+  geom_point(size = 2, alpha = 0.7) + 
+  scale_color_viridis_d(end = .9) + 
+  theme_minimal()
 ```
 
 5.  Display a scatterplot showing only data for birds (class `aves`) and fit a linear regression to that data using the `lm` function.
@@ -230,9 +232,10 @@ hra %>%
 hra %>% 
   filter(class == "aves") %>% 
   ggplot(aes(log10.mass, log10.hra)) + 
-  geom_point() + 
+  geom_point(size = 2, alpha = 0.7) + 
   geom_smooth(method = "lm") + 
-  labs(title = "Linear relationship between home range and mass for Aves")
+  labs(title = "Linear relationship between home range and mass for Aves") + 
+  theme_minimal()
 ```
 
 
@@ -243,8 +246,6 @@ hra %>%
 
 ```{r}
 summarize_table <- function(title, df) { 
-  df <- as_tibble(df)
-  title <- title
   nrow <- nrow(df)
   ncol <- ncol(df) 
   
@@ -285,7 +286,7 @@ rows_from_file <- function(filename, num_rows = 3) {
   readr::read_csv(filename) %>% head(n = num_rows)
 }
 
-rows_from_file("measurements.csv") # should show 3 rows
+rows_from_file("measurements.csv")
 ```
 
 

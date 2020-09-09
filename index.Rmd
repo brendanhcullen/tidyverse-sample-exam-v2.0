@@ -5,22 +5,23 @@ output:
     toc: TRUE
     toc_float: TRUE
     code_folding: hide
+    code_download: true
+    df_print: paged
     theme: flatly
     css: "css/custom.css"
-    code_download: true
 author: "[Brendan Cullen](https://bcullen.rbind.io/)"
 ---
 
 <br>
 <center>
-```{r out.width="70%", fig.pos="c", echo=FALSE}
+```{r out.width="50%", fig.pos="c", echo=FALSE}
 knitr::include_graphics("img/tidyverse_key.png")
 ```
 </center>
 <br>
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, rows.print = 10)
 library(tidyverse)
 ```
 
@@ -38,7 +39,7 @@ library(tidyverse)
 <br>
 
 :::alert
-There is of course no one correct way to solve each of these questions. I've included the first solutions that first came to my mind when I did this practice exam. If you find a mistake or a much better solution, feel free to submit a pull request on [Github](https://github.com/brendanhcullen/tidyverse-sample-exam-v2.0).
+There is of course no one correct way to solve each of these questions. I've included the solutions that first came to my mind when I did this practice exam. If you find a mistake or a better solution, please feel free to submit a pull request on [Github](https://github.com/brendanhcullen/tidyverse-sample-exam-v2.0).
 :::
 
 

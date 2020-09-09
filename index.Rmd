@@ -38,7 +38,8 @@ meta() %>%
     og_type = "article",
     twitter_card_type = "summary_large_image",
     twitter_creator = "@_bcullen"
-  )
+  ) %>% 
+  include_meta()
 ```
 
 ### Instructions

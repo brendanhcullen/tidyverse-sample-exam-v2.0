@@ -48,6 +48,10 @@ There is of course no one correct way to solve each of these questions. I've inc
 You can download the blank sample exam `.rmd` [here](sample_exam_v2.0.Rmd). You can download this current `.rmd` containing the solutions [here](index.Rmd).
 :::
 
+:::toggle
+By default, the code for each question is hidden. You can toggle the code on and off by clicking `Code`/`Hide` at the top right of each chunk or `Code > Show All Code` at the top right of this document.
+:::
+
 <br>
 
 ### Basic Operations
@@ -329,7 +333,7 @@ output:
 <br>
 
 :::book
-You can read about the RStudio Instructor Training and Certification Program [here](https://education.rstudio.com/trainers/). There is [another sample exam](https://education.rstudio.com/blog/2020/02/instructor-certification-exams/#tidyverse-certification-exam) available with [solutions](https://marlycormar.github.io/tidyverse_sample_exam/sample_exam_sols/sols.html), courtesy of [Marly Gotti](https://www.marlygotti.com/). I also reflected on my experience and shared some of my preparation materials [here](https://bcullen.rbind.io/post/2020-09-03-reflections-on-rstudio-instructor-training/). Feel free to [reach out](https://twitter.com/_bcullen) with any questions!
+You can read more about the RStudio Instructor Training and Certification Program [here](https://education.rstudio.com/trainers/). There is [another sample exam](https://education.rstudio.com/blog/2020/02/instructor-certification-exams/#tidyverse-certification-exam) available with [solutions](https://marlycormar.github.io/tidyverse_sample_exam/sample_exam_sols/sols.html), courtesy of [Marly Gotti](https://www.marlygotti.com/). I wrote about my own experience with the training and shared some of my exam prep materials [here](https://bcullen.rbind.io/post/2020-09-03-reflections-on-rstudio-instructor-training/). Feel free to [reach out](https://twitter.com/_bcullen) with any questions!
 :::
 
 <br>

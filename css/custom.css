@@ -1,6 +1,6 @@
 /* -----------div tips------------- */
 
-  div.alert, div.book, div.download{
+  div.alert, div.book, div.download, div.toggle{
     padding: 1em;
     margin: 1em 0;
     padding-left: 100px;
@@ -25,4 +25,8 @@ div.book {
 
 div.download {
   background-image: url("img/download.png");
+}
+
+div.toggle {
+  background-image: url("img/toggle.png");
 }

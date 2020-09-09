@@ -33,7 +33,7 @@ meta() %>%
     url = "https://tidyverse-exam-v2-solutions.netlify.app/",
     image = "https://github.com/brendanhcullen/tidyverse-sample-exam-v2.0/blob/master/img/tidyverse_key.png",
     og_author = "Brendan Cullen",
-    twitter_card_type = "summary",
+    twitter_card_type = "summary_large_image",
     twitter_creator = "@_bcullen"
   )
 ```

@@ -33,13 +33,11 @@ meta() %>%
   meta_social(
     title = "Tidyverse Sample Exam v2.0 Solutions",
     url = "https://tidyverse-exam-v2-solutions.netlify.app/",
-    image = "https://raw.githubusercontent.com/brendanhcullen/tidyverse-sample-exam-v2.0/master/img/tidyverse_key.png",
+    image = "https://github.com/brendanhcullen/tidyverse-sample-exam-v2.0/raw/master/img/tidyverse_key_sharing.jpg",
     og_author = "Brendan Cullen",
     og_type = "article",
     twitter_card_type = "summary_large_image",
-    twitter_creator = "@_bcullen"
-  ) %>% 
-  include_meta()
+    twitter_creator = "@_bcullen")
 ```
 
 ### Instructions

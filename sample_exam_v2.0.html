@@ -399,8 +399,10 @@ summary {
 <div id="plotting" class="section level3">
 <h3>Plotting</h3>
 <ol style="list-style-type: decimal">
-<li><p>The code below is supposed to read the file <code>home-range-database.csv</code> to create a tibble called <code>hra_raw</code>, but contains a bug. Describe and fix the problem. (There are several ways to fix it: please use whichever you prefer.)</p>
-<pre><code>hra_raw &lt;- read_csv(here::here(&quot;data&quot;, &quot;home-range-database.csv&quot;))</code></pre></li>
+<li>The code below is supposed to read the file <code>home-range-database.csv</code> to create a tibble called <code>hra_raw</code>, but contains a bug. Describe and fix the problem. (There are several ways to fix it: please use whichever you prefer.)</li>
+</ol>
+<pre class="r"><code>hra_raw &lt;- read_csv(here::here(&quot;data&quot;, &quot;home-range-database.csv&quot;))</code></pre>
+<ol start="2" style="list-style-type: decimal">
 <li>Convert the <code>class</code> column (which is text) to create a factor column <code>class_fct</code> and assign the result to a tibble <code>hra</code>. Use <code>forcats</code> to order the factor levels as:
 <ol style="list-style-type: decimal">
 <li>mammalia</li>
@@ -418,29 +420,31 @@ summary {
 <ol style="list-style-type: decimal">
 <li><p>Write a function called <code>summarize_table</code> that takes a title string and a tibble as input and returns a string that says something like, “<em>title</em> has <em>#</em> rows and <em>#</em> columns”. For example, <code>summarize_table('our table', person)</code> should return the string <code>&quot;our table has 5 rows and 3 columns&quot;</code>.</p></li>
 <li><p>Write another function called <code>show_columns</code> that takes a string and a tibble as input and returns a string that says something like, “<em>table</em> has columns <em>name</em>, <em>name</em>, <em>name</em>”. For example, <code>show_columns('person', person)</code> should return the string <code>&quot;person has columns person_id, personal_name, family_name&quot;</code>.</p></li>
-<li><p>The function <code>rows_from_file</code> returns the first <em>N</em> rows from a table in a CSV file given the file’s name and the number of rows desired. Modify it so that if no value is specified for the number of rows, a default of 3 is used.</p>
-<pre><code>rows_from_file &lt;- function(filename, num_rows) {
+<li><p>The function <code>rows_from_file</code> returns the first <em>N</em> rows from a table in a CSV file given the file’s name and the number of rows desired. Modify it so that if no value is specified for the number of rows, a default of 3 is used.</p></li>
+</ol>
+<pre class="r"><code>rows_from_file &lt;- function(filename, num_rows) {
   readr::read_csv(filename) %&gt;% head(n = num_rows)
 }
 
-rows_from_file(&quot;measurements.csv&quot;) # should show 3 rows</code></pre></li>
-<li><p>The function <code>long_name</code> checks whether a string is longer than 4 characters. Use this function and a function from <code>purrr</code> to create a logical vector that contains the value <code>TRUE</code> where family names in the tibble <code>person</code> are longer than 4 characters, and <code>FALSE</code> where they are 4 characters or less.</p>
-<pre><code>long_name &lt;- function(name) {
-  stringr::str_length(name) &gt; 4
-}</code></pre></li>
+rows_from_file(&quot;measurements.csv&quot;) # should show 3 rows</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>The function <code>long_name</code> checks whether a string is longer than 4 characters. Use this function and a function from <code>purrr</code> to create a logical vector that contains the value <code>TRUE</code> where family names in the tibble <code>person</code> are longer than 4 characters, and <code>FALSE</code> where they are 4 characters or less.</li>
 </ol>
+<pre class="r"><code>long_name &lt;- function(name) {
+  stringr::str_length(name) &gt; 4
+}</code></pre>
 </div>
 <div id="wrapping-up" class="section level3">
 <h3>Wrapping Up</h3>
 <ol style="list-style-type: decimal">
-<li><p>Modify the YAML header of this file so that a table of contents is automatically created each time this document is knit, and fix any errors that are preventing the document from knitting cleanly.</p>
+<li>Modify the YAML header of this file so that a table of contents is automatically created each time this document is knit, and fix any errors that are preventing the document from knitting cleanly.</li>
+</ol>
 <pre><code>---
 title: &quot;Tidyverse Exam Verson 2.0&quot;
 output:
 html_document:
     theme: flatly
----</code></pre></li>
-</ol>
+---</code></pre>
 </div>
 </div>
 

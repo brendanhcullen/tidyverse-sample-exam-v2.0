@@ -33,7 +33,7 @@ meta() %>%
   meta_social(
     title = "Tidyverse Sample Exam v2.0 Solutions",
     url = "https://tidyverse-exam-v2-solutions.netlify.app/",
-    image = "https://github.com/brendanhcullen/tidyverse-sample-exam-v2.0/raw/master/img/tidyverse_key_sharing.jpg",
+    image = "https://images.unsplash.com/photo-1512314889357-e157c22f938d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1502&q=80",
     og_author = "Brendan Cullen",
     og_type = "article",
     twitter_card_type = "summary_large_image",

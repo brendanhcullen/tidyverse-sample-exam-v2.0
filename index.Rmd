@@ -22,10 +22,12 @@ knitr::include_graphics("img/tidyverse_key.png")
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, rows.print = 10)
+```
 
+```{r}
 library(metathis)
 meta() %>% 
-  meta_description("A solution guide to a sample tidyverse exam for the RStudio Instructor Training and Certification Program") %>% 
+  meta_description("A solution guide to the sample tidyverse exam version 2.0 for the RStudio Instructor Training and Certification Program") %>% 
   meta_name("github-repo" = "brendanhcullen/tidyverse-sample-exam-v2.0") %>% 
   meta_viewport() %>% 
   meta_social(
@@ -37,7 +39,6 @@ meta() %>%
     twitter_creator = "@_bcullen"
   )
 ```
-
 
 ### Instructions
 

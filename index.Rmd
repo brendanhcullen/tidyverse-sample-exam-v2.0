@@ -24,7 +24,7 @@ knitr::include_graphics("img/tidyverse_key.png")
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, rows.print = 10)
 ```
 
-```{r}
+```{r echo=FALSE}
 library(metathis)
 meta() %>% 
   meta_description("A solution guide to the sample tidyverse exam version 2.0 for the RStudio Instructor Training and Certification Program") %>% 

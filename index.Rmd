@@ -63,7 +63,7 @@ You can download the blank sample exam `.rmd` [here](sample_exam_v2.0.Rmd). You 
 :::
 
 :::toggle
-By default, the code for each solution is hidden. You can toggle the code on and off by clicking `Code`/`Hide` at the top right of each chunk or `Code > Show All Code` at the top right of this document.
+By default, the code for each solution is hidden. You can toggle the code on and off by clicking `Code`/`Hide` at the top right of each chunk or `Code > Show All Code / Hide All Code` at the top right of this document.
 :::
 
 <br>

@@ -100,6 +100,12 @@ person %>%
   select(-family_first_letter)
 ```
 
+Another possibility:
+
+```{r}
+person %>% filter(family_name < "M")
+```
+
 4.  Display all the rows in `person` sorted by family name length with the longest name first.
 
 ```{r}

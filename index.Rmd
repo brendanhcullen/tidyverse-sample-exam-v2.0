@@ -100,7 +100,7 @@ person %>%
   select(-family_first_letter)
 ```
 
-Another possibility:
+Another, much more elegant solution, courtesy of [Beatriz Milz](https://education.rstudio.com/trainers/people/milz+beatriz/):
 
 ```{r}
 person %>% filter(family_name < "M")
